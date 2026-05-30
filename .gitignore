@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dados brutos (não versionar)
+data/raw/*.csv
+
+# Processados e modelos podem ser versionados ou não, conforme escolha do projeto
+# Por padrão, mantenha os pequenos (target encoder) e ignore os grandes (.pkl com modelos):
+# data/processed/
+# models/artifacts/*.pkl
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,96 @@
+{
+  "best_model_a": {
+    "model": "RandomForest",
+    "test_f1_macro": 1.0,
+    "test_accuracy": 1.0
+  },
+  "best_model_b": {
+    "model": "XGBoost",
+    "test_f1_macro": 0.8261004010177511,
+    "test_accuracy": 0.8343949044585988
+  },
+  "xgb_tuning_a": {
+    "best_params": {
+      "model__subsample": 0.8,
+      "model__reg_lambda": 0.1,
+      "model__reg_alpha": 0,
+      "model__n_estimators": 300,
+      "model__min_child_weight": 1,
+      "model__max_depth": 6,
+      "model__learning_rate": 0.01,
+      "model__colsample_bytree": 0.7
+    },
+    "best_cv_f1_macro": 0.97879174564499,
+    "n_iter": 50
+  },
+  "xgb_tuning_b": {
+    "best_params": {
+      "model__subsample": 0.8,
+      "model__reg_lambda": 1.0,
+      "model__reg_alpha": 0.5,
+      "model__n_estimators": 100,
+      "model__min_child_weight": 1,
+      "model__max_depth": 6,
+      "model__learning_rate": 0.1,
+      "model__colsample_bytree": 1.0
+    },
+    "best_cv_f1_macro": 0.8211001225826413,
+    "n_iter": 50
+  },
+  "recall_by_class": {
+    "XGBoost_A": {
+      "Insufficient_Weight": 0.975,
+      "Normal_Weight": 1.0,
+      "Overweight_Level_I": 0.8780487804878049,
+      "Overweight_Level_II": 0.9772727272727273,
+      "Obesity_Type_I": 0.9622641509433962,
+      "Obesity_Type_II": 1.0,
+      "Obesity_Type_III": 1.0
+    },
+    "XGBoost_B": {
+      "Insufficient_Weight": 0.775,
+      "Normal_Weight": 0.6428571428571429,
+      "Overweight_Level_I": 0.7317073170731707,
+      "Overweight_Level_II": 0.7272727272727273,
+      "Obesity_Type_I": 0.9245283018867925,
+      "Obesity_Type_II": 0.9777777777777777,
+      "Obesity_Type_III": 1.0
+    },
+    "LogisticRegression_A": {
+      "Insufficient_Weight": 1.0,
+      "Normal_Weight": 0.7380952380952381,
+      "Overweight_Level_I": 0.8780487804878049,
+      "Overweight_Level_II": 0.8181818181818182,
+      "Obesity_Type_I": 0.9433962264150944,
+      "Obesity_Type_II": 1.0,
+      "Obesity_Type_III": 1.0
+    },
+    "RandomForest_A": {
+      "Insufficient_Weight": 1.0,
+      "Normal_Weight": 1.0,
+      "Overweight_Level_I": 1.0,
+      "Overweight_Level_II": 1.0,
+      "Obesity_Type_I": 1.0,
+      "Obesity_Type_II": 1.0,
+      "Obesity_Type_III": 1.0
+    },
+    "LogisticRegression_B": {
+      "Insufficient_Weight": 0.6,
+      "Normal_Weight": 0.40476190476190477,
+      "Overweight_Level_I": 0.36585365853658536,
+      "Overweight_Level_II": 0.11363636363636363,
+      "Obesity_Type_I": 0.660377358490566,
+      "Obesity_Type_II": 0.8222222222222222,
+      "Obesity_Type_III": 1.0
+    },
+    "RandomForest_B": {
+      "Insufficient_Weight": 0.825,
+      "Normal_Weight": 0.5952380952380952,
+      "Overweight_Level_I": 0.7073170731707317,
+      "Overweight_Level_II": 0.6590909090909091,
+      "Obesity_Type_I": 0.9056603773584906,
+      "Obesity_Type_II": 0.9777777777777777,
+      "Obesity_Type_III": 1.0
+    }
+  }
+}
