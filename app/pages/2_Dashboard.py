@@ -256,12 +256,14 @@ try:
 
     st.markdown(
         "<div class='info-box'>Estas são as características comportamentais e demográficas "
-        "que mais influenciam a previsão do nível de peso, indicando oportunidades para intervenções preventivas.</div>"
+        "que mais influenciam a previsão do nível de peso, indicando oportunidades para intervenções preventivas."
+        "</div>"
+        "",
         unsafe_allow_html=True,
     )
 except Exception as e:
     st.info(f'Feature importance indisponível: treine o Modelo B primeiro. ({e})')
 
 st.markdown('---')
-st.caption('Dados: estudo sobre obesidade. '
+st.caption('Dados: estudo sobre obesidade.'
            'Dataset balanceado via SMOTE.')
