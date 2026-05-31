@@ -208,18 +208,46 @@ with col6:
 st.markdown('---')
 st.markdown('#### Importância das variáveis — Modelo B (triagem comportamental)')
 
+# Dicionário de tradução: nome técnico → rótulo amigável em português
+# (afeta APENAS a exibição; o modelo continua usando os nomes originais)
+FEATURE_LABELS_PT = {
+    'Age':             'Idade',
+    'Height':          'Altura',
+    'Gender':          'Gênero',
+    'family_history':  'Histórico familiar',
+    'FAVC':            'Consumo de calorias',
+    'FCVC':            'Consumo de vegetais',
+    'NCP':             'Refeições por dia',
+    'CAEC':            'Lanches entre refeições',
+    'SMOKE':           'Fumante',
+    'CH2O':            'Consumo de água',
+    'SCC':             'Monitora calorias',
+    'FAF':             'Atividade física',
+    'TUE':             'Tempo em telas',
+    'CALC':            'Consumo de álcool',
+    # MTRANS, após one-hot, vira MTRANS_<categoria>
+    'MTRANS_Automobile':            'Transporte: automóvel',
+    'MTRANS_Bike':                  'Transporte: bicicleta',
+    'MTRANS_Motorbike':             'Transporte: moto',
+    'MTRANS_Public_Transportation': 'Transporte: público',
+    'MTRANS_Walking':               'Transporte: caminhada',
+}
+
 try:
     model_b = load_model_b()
-    # Extrai importâncias da pipeline
     xgb = model_b.named_steps['model']
     preprocessor = model_b.named_steps['preprocessor']
     feat_names = list(preprocessor.get_feature_names_out())
     importances = xgb.feature_importances_
+
     fi = (pd.DataFrame({'feature': feat_names, 'importance': importances})
           .sort_values('importance', ascending=True).tail(12))
 
+    # Aplica a tradução para exibição (fallback no nome original se faltar mapa)
+    fi['feature_pt'] = fi['feature'].map(FEATURE_LABELS_PT).fillna(fi['feature'])
+
     fig = go.Figure(go.Bar(
-        x=fi['importance'], y=fi['feature'], orientation='h',
+        x=fi['importance'], y=fi['feature_pt'], orientation='h',   # ← usa feature_pt
         marker_color='#0d7377',
     ))
     fig.update_layout(height=420, margin=dict(l=10, r=10, t=10, b=10),
