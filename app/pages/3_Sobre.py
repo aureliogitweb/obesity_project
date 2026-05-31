@@ -67,8 +67,8 @@ with col2:
 
 st.markdown(
     "<div class='info-box'>✅ O Modelo B supera o requisito de <b>75% de acurácia</b> "
-    "do desafio usando apenas variáveis comportamentais — o resultado clinicamente "
-    "relevante.</div>",
+    "do desafio usando apenas variáveis comportamentais, sendo o resultado clinicamente "
+    "mais relevante.</div>",
     unsafe_allow_html=True,
 )
 

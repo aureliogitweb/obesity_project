@@ -85,7 +85,7 @@ col_a, col_b = st.columns(2)
 with col_a:
     st.markdown(
         """
-        #### 🔬 Modelo A — Diagnóstico
+        #### Modelo A — Diagnóstico
         Utiliza **peso e IMC** entre as variáveis. Atinge altíssima precisão
         (~97-100%), mas isso é esperado: as classes de obesidade são *definidas*
         pelo IMC. Serve como **linha base de sanidade**, não como ferramenta de valor
@@ -95,7 +95,7 @@ with col_a:
 with col_b:
     st.markdown(
         """
-        #### 🎯 Modelo B — Triagem comportamental
+        #### Modelo B — Triagem comportamental
         **Exclui peso e IMC.** Prediz o risco a partir de hábitos alimentares,
         atividade física, histórico familiar e estilo de vida — **antes da balança**.
         É o modelo de maior valor clínico, pois permite **ação preventiva**.
@@ -127,7 +127,7 @@ st.markdown(
 
 # Links
 st.markdown('## Recursos')
-st.markdown(f"- 📦 **Repositório GitHub:** [{GITHUB_URL}]({GITHUB_URL})")
+st.markdown(f"- **Repositório GitHub:** [{GITHUB_URL}]({GITHUB_URL})")
 
 st.markdown('---')
 st.caption('Tech Challenge — Pós-Tech | Modelo de apoio à decisão clínica para previsão de obesidade.')

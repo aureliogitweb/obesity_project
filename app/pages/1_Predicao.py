@@ -24,7 +24,7 @@ from app_utils import (  # noqa: E402
 st.set_page_config(page_title='Predição | Obesidade', page_icon='🎯', layout='wide')
 inject_css()
 
-page_header('🎯 Predição de Nível de Peso',
+page_header('Predição de Nível de Peso',
             'Preencha os dados do paciente para obter a estimativa')
 
 # Seleção do modelo
@@ -55,7 +55,7 @@ with st.form('prediction_form'):
         weight = st.number_input('Peso (kg)', min_value=30.0, max_value=250.0,
                                  value=70.0, step=0.5, format='%.1f')
         if use_model_a:
-            st.caption('⚠️ Peso usado apenas pelo Modelo A')
+            st.caption('Atenção: Peso usado apenas pelo Modelo A')
 
     st.markdown('#### Histórico e hábitos alimentares')
     c4, c5, c6 = st.columns(3)
@@ -198,9 +198,7 @@ if submitted:
     )
 
     st.markdown(
-        "<div class='disclaimer'>⚠️ Resultado gerado por modelo estatístico de apoio. "
-        "<b>Não constitui diagnóstico.</b> A decisão clínica final cabe ao profissional "
-        "de saúde.</div>",
+        "<div class='disclaimer'>Resultado gerado por modelo estatístico de apoio.</div>",
         unsafe_allow_html=True,
     )
 else:

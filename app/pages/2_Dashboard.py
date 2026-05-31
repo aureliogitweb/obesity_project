@@ -34,7 +34,7 @@ page_header('📊 Dashboard Analítico',
 try:
     df = load_dataset()
 except FileNotFoundError:
-    st.error('❌ Dataset não encontrado em `data/raw/obesity.csv`.')
+    st.error('Dataset não encontrado em `data/raw/obesity.csv`.')
     st.stop()
 
 st.sidebar.markdown('### Filtros')
@@ -255,14 +255,13 @@ try:
     st.plotly_chart(fig, width='stretch')
 
     st.markdown(
-        "<div class='info-box'>💡 Estas são as variáveis comportamentais e demográficas "
-        "que mais ajudam a prever o nível de peso sem usar a balança, potenciais "
-        "alvos de intervenção preventiva.</div>",
+        "<div class='info-box'>Estas são as características comportamentais e demográficas "
+        "que mais influenciam a previsão do nível de peso, indicando oportunidades para intervenções preventivas.</div>"
         unsafe_allow_html=True,
     )
 except Exception as e:
     st.info(f'Feature importance indisponível: treine o Modelo B primeiro. ({e})')
 
 st.markdown('---')
-st.caption('Dados: estudo sobre obesidade (México, Peru, Colômbia). '
+st.caption('Dados: estudo sobre obesidade. '
            'Dataset balanceado via SMOTE.')
