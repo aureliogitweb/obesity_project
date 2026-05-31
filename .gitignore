@@ -14,7 +14,7 @@ dist/
 .ipynb_checkpoints/
 
 # Dados brutos (não versionar)
-data/raw/*.csv
+# data/raw/*.csv
 
 # Processados e modelos podem ser versionados ou não, conforme escolha do projeto
 # Por padrão, mantenha os pequenos (target encoder) e ignore os grandes (.pkl com modelos):
